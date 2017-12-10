@@ -52,6 +52,7 @@
                     ethereum: 'Ether',
                     litecoin: 'Litecoin',
                     monero: 'Monero',
+                    bitcoinCash: 'Bitcoin Cash',
                 },
                 dialogHeader: 'Donate {coinName}',
                 dialogHelper: 'Please use this {coin} address to donate. <br/> Thanks for your contribution !',
@@ -139,7 +140,7 @@
             document.getElementById('cryptodonate-helper').innerHTML = this.getString('dialogHelper');
 
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
-            document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.address);
+            document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.coin + ':' + this.config.address);
 
             var dialog = document.getElementById('cryptodonate-dialog');
             dialog.className = this.config.dialogClass;

@@ -25,6 +25,9 @@
                     <th>
                         Monero
                     </th>
+                    <th>
+                        Bitcoin Cash
+                    </th>
                 </thead>
                 <tbody>
                     <tr>
@@ -45,6 +48,10 @@
                         </td>
                         <td>
                             <div class="xmr">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="bch">
                             </div>
                         </td>
                     </tr>
@@ -68,6 +75,10 @@
                             <div class="xmr large">
                             </div>
                         </td>
+                        <td>
+                            <div class="bch large">
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -87,6 +98,10 @@
                         </td>
                         <td>
                             <div class="xmr dark">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="bch dark">
                             </div>
                         </td>
                     </tr>
@@ -145,6 +160,20 @@
 
                             buttonClass: xmrElems[i].className.match('dark') !== null ? 'dark' : '',
                             dialogClass: xmrElems[i].className.match('dark') !== null ? 'dark' : ''
+                        });
+                        cd.appendTo(xmrElems[i]);
+                    }
+
+                    var bchElems = document.getElementsByClassName('bch');
+                    for(var i = 0;i < ethElems.length;i++) {
+                        var cd = new Fr.CryptoDonate({
+                            coin: 'bitcoincash',
+                            address: '1C5bs6rMqvkViCAguPuRwd49k9A7ZrJNJP',
+                            baseURL: '../src/',
+                            buttonLarge: bchElems[i].className.match('large') !== null,
+
+                            buttonClass: bchElems[i].className.match('dark') !== null ? 'dark' : '',
+                            dialogClass: bchElems[i].className.match('dark') !== null ? 'dark' : ''
                         });
                         cd.appendTo(xmrElems[i]);
                     }
